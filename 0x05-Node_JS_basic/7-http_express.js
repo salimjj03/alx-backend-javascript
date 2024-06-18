@@ -10,14 +10,14 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  const msg = 'This is the list of our students\n';
   const database = process.argv[2];
-  try {
-    const data = await countStudents(database);
-    res.send(`${msg}${data}`);
-  } catch (error) {
-    res.send(`${msg}${error.message}`);
-  }
+  countStudents(database)
+    .then((data) => {
+      res.send(`This is the list of our students\n${data[0]}\n${data.slice(1)}`);
+    })
+    .catch((err) => {
+      res.send(`This is the list of our students\n${err.message}`);
+    });
 });
 
 app.listen(port, () => {});
