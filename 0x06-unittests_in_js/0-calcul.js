@@ -1,8 +1,9 @@
 module.exports = function calculateNumber (a, b = 0) {
-  const aNum = Number(a);
-  const bNum = Number(b);
+  const numA = Number(a);
+  const numB = Number(b);
 
-  if (Number.isNaN(aNum) || Number.isNaN(bNum)) { throw TypeError('Parameters must be numbers'); }
+  if (Number.isNaN(numA) || Number.isNaN(numB)) { throw TypeError('Parameters must be numbers'); }
 
-  return Math.round(aNum) + Math.round(bNum);
+  const result = Math.round(numA) + Math.round(numB);
+  return result
 };
