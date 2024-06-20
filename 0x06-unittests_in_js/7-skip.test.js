@@ -9,6 +9,14 @@ describe('Testing numbers', () => {
     expect(2 === 2).to.be.true;
   });
 
+  xit('1 is equal to 3', () => {
+    expect(1 === 3).to.be.true;
+  });
+
+  it('3 is equal to 3', () => {
+    expect(3 === 3).to.be.true;
+  });
+
   it('4 is equal to 4', () => {
     expect(4 === 4).to.be.true;
   });
